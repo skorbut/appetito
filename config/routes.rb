@@ -1,5 +1,5 @@
 Appetito::Application.routes.draw do
-  resource :meals
+  resources :meals
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
