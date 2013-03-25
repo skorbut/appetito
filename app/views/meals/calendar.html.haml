@@ -1,0 +1,26 @@
+%section#calendar
+  %header#calendar_header
+    %h2
+      =link_to "<",calendar_meals_path
+      März
+      =link_to ">",calendar_meals_path
+  %table
+    %tr
+      %th Mo
+      %th Di
+      %th Mi
+      %th Do
+      %th Fr
+      %th Sa
+      %th So
+    %tr
+      %td
+        %header.last_month 25
+        %ul.meal_list
+          %li
+            mittags:
+            =link_to "Lasagne",meal_path(@meals.first)
+          %li
+            abends:
+            =link_to "Buletten",meal_path(@meals.first)
+        

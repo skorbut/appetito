@@ -1,0 +1,13 @@
+%h1 Neuer Eintrag
+=form_for @meal do |f|
+  %fieldset#new_meal
+    %legend Neue Mahlzeit eingeben
+    %ol
+      %li
+        =f.label :name
+        =f.text_field :name
+      %li
+        =f.label :date
+        =f.date_select :date, :order => [:day, :month, :year]
+      %li
+        =f.submit "Create"
