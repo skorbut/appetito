@@ -23,6 +23,11 @@ class MealsController < ApplicationController
   end
   
   def calendar
+    @month=Time.zone.now
+    if (params[:month])
+      @month=Date.parse(params[:month])
+    end
+    @days=meals_for_calendar(@month)
     @meals=Meal.all
   end
 end

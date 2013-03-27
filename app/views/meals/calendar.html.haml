@@ -1,9 +1,9 @@
 %section#calendar
   %header#calendar_header
     %h2
-      =link_to "<",calendar_meals_path
-      März
-      =link_to ">",calendar_meals_path
+      =link_to "<",calendar_meals_path(:month => @month-1.month)
+      = I18n.l @month, :format => '%B, %Y'
+      =link_to ">",calendar_meals_path(:month => @month+1.month)
   %table
     %tr
       %th Mo
@@ -13,14 +13,8 @@
       %th Fr
       %th Sa
       %th So
-    %tr
+    - @days.each_with_index do |day,i|
+      - if i%7==0
+        %tr
       %td
-        %header.last_month 25
-        %ul.meal_list
-          %li
-            mittags:
-            =link_to "Lasagne",meal_path(@meals.first)
-          %li
-            abends:
-            =link_to "Buletten",meal_path(@meals.first)
-        
+        = render partial: "calender_meal", :locals => { :day => day, :month => @month}

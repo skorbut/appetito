@@ -10,4 +10,7 @@
         =f.label :date
         =f.date_select :date, :order => [:day, :month, :year]
       %li
+        =f.label :type_of_meal
+        =f.select :type_of_meal, Meal.type_of_meal.options
+      %li
         =f.submit "Create"

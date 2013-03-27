@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'rails-i18n', '0.7.2'
 gem 'haml-rails', '0.4'
+gem 'enumerize'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
