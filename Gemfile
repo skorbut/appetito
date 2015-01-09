@@ -5,6 +5,7 @@ gem 'rails-i18n'
 gem 'haml-rails'
 gem 'enumerize'
 gem 'sqlite3'
+gem 'jquery-rails'
 
 group :assets do
   gem 'sass-rails'
@@ -12,12 +13,12 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
 end
 
-group :development do
-  gem 'rspec-rails'
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
