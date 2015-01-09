@@ -13,8 +13,8 @@
       %th Fr
       %th Sa
       %th So
-    - @days.each_with_index do |day,i|
-      - if i%7==0
+    - (1..Time.days_in_month(@month.month,@month.year)).each do |day|
+      - if (day-1)%7==0
         %tr
       %td
         = render partial: "calender_meal", :locals => { :day => day, :month => @month}

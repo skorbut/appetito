@@ -27,7 +27,5 @@ class MealsController < ApplicationController
     if (params[:month])
       @month=Date.parse(params[:month])
     end
-    @days=Meal.for_month(@month)
-    @meals=Meal.all
   end
 end

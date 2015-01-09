@@ -9,8 +9,4 @@ class Meal < ActiveRecord::Base
   def self.at_date date
     where(date: date.beginning_of_day..date.end_of_day)
   end
-
-  def self.for_month(month)
-    where(date: month.beginning_of_month..month.end_of_month)
-  end
 end
