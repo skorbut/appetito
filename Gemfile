@@ -5,6 +5,7 @@ gem 'rails-i18n'
 gem 'haml-rails'
 gem 'enumerize'
 gem 'jquery-rails'
+gem 'puma'
 
 group :assets do
   gem 'sass-rails'
