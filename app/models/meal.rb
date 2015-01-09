@@ -7,6 +7,10 @@ class Meal < ActiveRecord::Base
   enumerize :type_of_meal, :in => [:breakfast, :lunch, :dinner]
 
   def self.at_date date
-    where(:date => date.beginning_of_day..date.end_of_day)
+    where(date: date.beginning_of_day..date.end_of_day)
+  end
+
+  def self.for_month(month)
+    where(date: month.beginning_of_month..month.end_of_month)
   end
 end

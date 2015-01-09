@@ -7,7 +7,6 @@ Appetito::Application.configure do
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
-
   # Do not eager load code on boot.
   config.eager_load = false
 
