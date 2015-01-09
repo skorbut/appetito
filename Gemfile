@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
-
+ruby '2.1.2'
 gem 'rails'
 gem 'rails-i18n'
 gem 'haml-rails'
 gem 'enumerize'
-gem 'sqlite3'
 gem 'jquery-rails'
 
 group :assets do
@@ -16,6 +15,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :production do
