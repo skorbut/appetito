@@ -1,7 +1,12 @@
-%header.last_month 
-  = day
+- if meals[:date].month != month.month
+  %header.last_month
+- else
+  %header.current_month
+= meals[:date]
 %ul.meal_list
   %li
-    mittags:
+    = "morgens: #{meals[:breakfast].join(", ")}"
   %li
-    abends:
+    = "mittags: #{meals[:lunch].join(", ")}"
+  %li
+    = "abends: #{meals[:dinner].join(", ")}"

@@ -4,7 +4,7 @@ class MealsController < ApplicationController
   end
 
   def create
-    @meal=Meal.new(params[:meal])
+    @meal=Meal.new(meal_params)
     if @meal.valid?
       @meal.save!
       redirect_to :action => "index"
@@ -14,8 +14,7 @@ class MealsController < ApplicationController
   end
 
   def show
-    #@meal=Meal.find(params[:id])
-    @meal=Meal.all.first
+    @meal=Meal.find(params[:id])
   end
 
   def index
@@ -23,9 +22,22 @@ class MealsController < ApplicationController
   end
 
   def calendar
-    @month=Time.zone.now
+    @month=month
+  end
+
+  private
+
+  def month
+    @month||=month_from_param || Time.zone.now
+  end
+
+  def month_from_param
     if (params[:month])
       @month=Date.parse(params[:month])
     end
+  end
+
+  def meal_params
+    params.require(:meal).permit(:name, :date, :type_of_meal)
   end
 end
