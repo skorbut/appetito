@@ -70,6 +70,6 @@ Appetito::Application.configure do
 
 
   config.middleware.use '::Rack::Auth::Basic' do |u, p|
-    [u, p] == ['buon', 'appetito']
+    [u, p] == [ENV['BASIC_AUTH_USER'], ENV['BASIC_AUTH_PASS']]
   end
 end
