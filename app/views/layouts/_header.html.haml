@@ -4,9 +4,19 @@
   %nav
     %ul
       %li Home
-      %li 
+      %li
         =link_to "Neuer Eintrag", new_meal_path
       %li
         =link_to "Alle Gerichte", meals_path
       %li
         =link_to "Kalender", calendar_meals_path
+      - if user_signed_in?
+        %li
+          ="Logged in as #{current_user.email}"
+        %li
+          = link_to "Logout", destroy_user_session_path, method: :delete
+      - else
+        %li
+          = link_to "Sign up", new_user_registration_path
+        %li
+          = link_to "Login", new_user_session_path

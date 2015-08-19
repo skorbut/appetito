@@ -1,5 +1,6 @@
 Appetito::Application.routes.draw do
   
+  devise_for :users
   root :to => "meals#calendar"
   
   resources :meals do

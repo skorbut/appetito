@@ -7,3 +7,7 @@ Allows to keep track of meals and plan weekends to stop eating pasta and pizza a
 appetito is build using semaphore ci (http://www.semaphoreapp.com) and on success automatically deployed to heroku.
 The build history is available under https://semaphoreci.com/skorbut/appetito
 The application runs on heroku at https://infinite-dusk-8171.herokuapp.com/ It is curently protected by http basic auth.
+
+## development
+
+Start the local server via: bundle exec puma -C config/puma.rb --port 5000
