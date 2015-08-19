@@ -4,17 +4,10 @@
       =link_to "<",calendar_meals_path(:month => @month-1.month)
       = I18n.l @month, :format => '%B, %Y'
       =link_to ">",calendar_meals_path(:month => @month+1.month)
-  %table
-    %tr
-      %th Mo
-      %th Di
-      %th Mi
-      %th Do
-      %th Fr
-      %th Sa
-      %th So
+  .calendar
+    -  I18n.t(:"date.day_names").rotate(1).each do |day|
+      .day_header
+        = day
     - meals_for_calendar(@month).each_with_index do |meals, day|
-      - if day%7==0
-        %tr
-      %td
+      .day
         = render partial: "calender_meal", :locals => { :meals => meals, :month => @month}
