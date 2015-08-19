@@ -1,12 +1,9 @@
-- if meals[:date].month != month.month
-  %header.last_month
-- else
-  %header.current_month
-= meals[:date]
-%ul.meal_list
-  %li
-    = "morgens: #{meals[:breakfast].join(", ")}"
-  %li
-    = "mittags: #{meals[:lunch].join(", ")}"
-  %li
-    = "abends: #{meals[:dinner].join(", ")}"
+.meal_date{class: [("lighter" if meals[:date].month != month.month), ("greener" if meals[:date] == Date.today)]}
+  = I18n.l meals[:date], :format => :short
+.meal_list{class: ("lighter" if meals[:date].month != month.month)}
+  .breakfast
+    = "b: #{meals[:breakfast].join(", ")}"
+  .lunch
+    = "l: #{meals[:lunch].join(", ")}"
+  .dinner
+    = "d: #{meals[:dinner].join(", ")}"

@@ -37,36 +37,54 @@ header#page_header nav ul li, footer#page_footer nav ul li{
   display:inline;
 }
 
-section#calendar table {
-  width:100%;
-  table-layout: fixed;
-  border-spacing: 0px;
-  border-collapse: collapse;
+.calendar {
+  display:flex;
+  width: 100%;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-content: space-between;
 }
 
-section#calendar table tr th {
+.lighter {
+  opacity: 0.5;
+}
+
+.greener {
+  color: #0c0;
+}
+
+
+.day_header {
+  width: 14%;
   font-weight:lighter;
   text-align: left;
-}
-section#calendar table tr td {
-  width:14%;
-  border:1px solid #aaa;
-  height:80px;
-  text-align: left;
-  vertical-align: top;
+  margin-bottom: 5px;
 }
 
-section#calendar table tr td header {
-  margin: 0px;
+.day {
+  width: 14%;
+  margin-bottom: 5px;
+  /*border: 1px solid black;*/
 }
 
-header.last_month {
-  color:#aaa;
+.breakfast {
+  background: #aaa;
 }
 
-ul.meal_list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.lunch {
+  background-color: #bbb;
+}
+
+.dinner {
+  background-color: #ccc;
+}
+
+.meal_list {
+  display:flex;
+  width: 100%;
+  flex-wrap:wrap;
+  flex-direction:column;
+  justify-content: space-between;
+  align-content: space-between;
   font-size: smaller;
 }
